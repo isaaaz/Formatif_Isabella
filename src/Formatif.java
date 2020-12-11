@@ -9,7 +9,7 @@ public class Formatif
 
 	public static void main(String[] args)
 		{
-			int[] Tab = {2,8,12,6};
+			int[] Tab = {32,8,18,6,12,3};
 			
 			// 1. Afficher la somme des éléments d’un tableau d’entiers
 			
@@ -68,21 +68,18 @@ public class Formatif
 				
 				static int[] tableauModifie (int[] a) {	
 					
-					 // the position of the largest number 
+				
 					int position = MethodesTableaux.plusGrandIndex(a);
-					int last = a[position];
 					a[position] = a[a.length-1]; 
-					a[a.length-1]=last;
-					
-					
-					//int temp = a[i];
-					//a[i] = a[j];
-					//a[j]=temp;
-					
 					
 					int[] monTab = new int[a.length-1];
+					
 					for (int i=0; i<monTab.length; i++) {
+						if (i<position)
 						monTab[i] = a[i];
+						else 
+						monTab[i] = a[i+1];
+						
 					}
 					return monTab;
 				}
